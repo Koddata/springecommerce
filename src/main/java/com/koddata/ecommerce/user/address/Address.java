@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.koddata.ecommerce.user.User;
 
 @Entity
 @Table(name="user_address")
@@ -16,6 +19,9 @@ public class Address {
 	
 	private String address;
 	private String phone;
+	
+	@ManyToOne
+	private User user;
 	
 	public Address() {
 		super();
